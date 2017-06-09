@@ -25,19 +25,27 @@
   <img src="assets/img/hub0_1.png">
 
   <ion-card-content>
-    <p>Enter the code to advance....</p>
+    <p>Enter the correct code to advance....</p>
   </ion-card-content>
+ 
+  <ion-list no-lines>
+ 
+    <form [formGroup]="submitAnswer">
+ 
+        <ion-item>
+            <ion-label floating>Answer</ion-label>
+            <ion-input formControlName="answer" type="text" [class.invalid]="!submitAnswer.controls.answer.valid && submitAttempt"></ion-input>
+        </ion-item>
 
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Code</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+        <ion-item *ngIf="!submitAnswer.controls.answer.valid && submitAttempt">
+          <p>Only one word....</p>
+        </ion-item>
+ 
+    </form>
+
   </ion-list>
 
-  <div padding>
-    <button ion-button color="primary" block>Submit</button>
-  </div>
+  <button ion-button full color="primary" (click)="save()">Enter code</button>
 
 </ion-card>
 
