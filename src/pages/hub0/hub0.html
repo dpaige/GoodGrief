@@ -7,7 +7,7 @@
   <ion-item>
     <ion-icon name="ribbon" item-start></ion-icon>
       Puzzles Complete
-    <ion-badge item-end>0</ion-badge>
+    <ion-badge item-end>{{puzzlesCompleted}}</ion-badge>
   </ion-item>
 
 </ion-header>
@@ -39,6 +39,14 @@
 
         <ion-item *ngIf="!submitAnswer.controls.answer.valid && submitAttempt">
           <p>Only one word....</p>
+        </ion-item>
+
+        <ion-item *ngIf="(correctAnswer == true) && (submitAttempt == true)">
+          <p>Correct!</p>
+        </ion-item>
+
+        <ion-item *ngIf="(correctAnswer == false) && (submitAttempt == true)">
+          <p>Incorrect!</p>
         </ion-item>
  
     </form>
