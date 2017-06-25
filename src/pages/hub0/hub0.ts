@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { Hub1Page } from '../hub1/hub1';
 
 @IonicPage()
@@ -14,12 +15,13 @@ export class Hub0Page {
 
   submitAttempt: boolean = false;
   correctAnswer: boolean = false;
-  puzzlesCompleted: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, private storage: Storage) {
     this.submitAnswer = formBuilder.group({
         answer: ['',Validators.compose([Validators.pattern('[a-zA-Z]*'), Validators.required])]
     });
+
+    this.storage.set('puzzlesComplete', 0);  //initialize to zero at start of game
 
   }
 
@@ -31,6 +33,7 @@ export class Hub0Page {
  
     this.submitAttempt = true;
     this.correctAnswer = false;
+
  
     if(!this.submitAnswer.valid){
         console.log("fail");
@@ -38,7 +41,7 @@ export class Hub0Page {
     else {
         if (this.submitAnswer.value.answer == "brain"){
           this.correctAnswer = true;
-          this.puzzlesCompleted++;
+          this.storage.set('puzzlesComplete', 1);
           this.navCtrl.push(Hub1Page);
         } else {
           this.correctAnswer = false;
