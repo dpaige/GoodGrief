@@ -1,20 +1,19 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Hub 0</ion-title>
+    <ion-title>Hub 1 Panel 1</ion-title>
   </ion-navbar>
 
   <ion-item>
     <ion-icon name="ribbon" item-start></ion-icon>
       Puzzles Complete
-    <ion-badge item-end>0</ion-badge>
+    <ion-badge item-end>{{puzzlesComplete}}</ion-badge>
   </ion-item>
 
 </ion-header>
 
 
 <ion-content padding>
-  
   <ion-card>
     
     <ion-item>
@@ -54,7 +53,11 @@
     </ion-list>
     
     <button ion-button full color="primary" (click)="save()">Enter code</button>
-  
+    
+    <p>
+      <button ion-button block color="secondary" (click)="goBackToHub()">Go Back To Hub</button>
+    </p>
+
   </ion-card>
 
 </ion-content>

@@ -48,6 +48,6 @@ export class Hub0Page {
         }
     }
  
-}
+  }
 
 }

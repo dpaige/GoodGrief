@@ -10,6 +10,10 @@ import { HomePage } from '../pages/home/home';
 import { EntrancePage } from '../pages/entrance/entrance';
 import { Hub0Page } from '../pages/hub0/hub0';
 import { Hub1Page } from '../pages/hub1/hub1';
+import { Hub1panel1Page } from '../pages/hub1panel1/hub1panel1';
+import { Hub1panel2Page } from '../pages/hub1panel2/hub1panel2';
+import { Hub1panel3Page } from '../pages/hub1panel3/hub1panel3';
+import { Hub2Page } from '../pages/hub2/hub2';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { Hub1Page } from '../pages/hub1/hub1';
     HomePage,
     EntrancePage,
     Hub0Page,
-    Hub1Page
+    Hub1Page,
+    Hub1panel1Page,
+    Hub1panel2Page,
+    Hub1panel3Page,
+    Hub2Page
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,11 @@ import { Hub1Page } from '../pages/hub1/hub1';
     HomePage,
     EntrancePage,
     Hub0Page,
-    Hub1Page
+    Hub1Page,
+    Hub1panel1Page,
+    Hub1panel2Page,
+    Hub1panel3Page,
+    Hub2Page
   ],
   providers: [
     StatusBar,

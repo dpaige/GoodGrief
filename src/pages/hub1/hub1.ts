@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { Hub1panel1Page } from '../hub1panel1/hub1panel1';
+import { Hub1panel2Page } from '../hub1panel2/hub1panel2';
+import { Hub1panel3Page } from '../hub1panel3/hub1panel3';
+import { Hub2Page } from '../hub2/hub2';
 
-/**
- * Generated class for the Hub1Page page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-hub1',
@@ -20,7 +18,6 @@ export class Hub1Page {
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 
     storage.get('puzzlesComplete').then((val) => {
-      console.log("Current value is:" + val);
       this.puzzlesComplete = val;
     })
 
@@ -28,6 +25,16 @@ export class Hub1Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Hub1Page');
+  }
+
+  goToPanel1() {
+    this.navCtrl.push(Hub1panel1Page);
+  }
+  goToPanel2() {
+    this.navCtrl.push(Hub1panel2Page);
+  }
+  goToPanel3() {
+    this.navCtrl.push(Hub1panel3Page);
   }
 
 }
