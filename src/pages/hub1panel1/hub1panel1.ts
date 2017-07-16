@@ -43,9 +43,9 @@ export class Hub1panel1Page {
         console.log("fail");
     } 
     else {
-        if (this.submitAnswer.value.answer == "zzzzz"){
+        if (this.submitAnswer.value.answer == "babies"){
           this.correctAnswer = true;
-          this.storage.set('puzzlesComplete', this.puzzlesComplete++);
+          this.storage.set('puzzlesComplete', this.puzzlesComplete + 1);
           this.showAlert()
           this.navCtrl.push(Hub1Page);
         } else {
